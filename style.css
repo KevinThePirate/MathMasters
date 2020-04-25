@@ -1,0 +1,481 @@
+* {
+    overflow: hidden;
+    font-family: pokemon-dp-pro;
+    text-transform: uppercase;
+    user-select: none;
+}
+body {
+    background-image: url(images/misc/backdrop.png);
+    background-size: 113% 800px;
+    background-position: center top -50px;
+    background-repeat: no-repeat;
+}
+img {
+    transition: 1s left;
+}
+
+button:disabled {
+    opacity: 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+tr {
+    width: 100%;
+}
+
+@font-face {
+    font-family: "pokemon-dp-pro";
+    src: url("pokemon-dp-pro.ttf");
+}
+
+#gameArea,
+#transition,
+#zoomTest{
+    width: 900px;
+    height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 5px solid black;
+    border-radius: 10px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -450px;
+    background-color: black;
+    box-shadow: inset 0 0 1000px black;
+}
+#zoomContent{
+    text-align: center;
+    padding-top: 20%;
+}
+#gameArea {
+    opacity: 1;
+}
+
+#transition {
+    background-color: black;
+    display: none;
+    opacity: 0;
+    transition: 1s opacity;
+    z-index: 10;
+    color: white;
+}
+
+#transition #levelTitle {
+    font-size: 100px;
+    text-align: center;
+}
+
+#zoomTest{
+    background-color: black;
+    border: 10px solid red;
+    z-index: 15;
+    color: white;
+    transition: 1s;
+}
+
+#battleArea {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 900px;
+    height: 400px;
+    background-color: #F8E35B;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#uiArea {
+    background-color: #F8E35B;
+    position: relative;
+    bottom: 0px;
+    width: 900px;
+    height: 200px;
+    border-top: 10px solid black;
+}
+
+#questionArea,
+#answerArea,
+#numpadArea {
+    height: 200px;
+    width: calc(300px - 20px);
+    position: absolute;
+    text-align: center;
+}
+
+#questionArea {
+    border: 10px solid #C68429;
+    background-color: #836A28;
+    left: 0;
+    width: 285px;
+}
+
+#answerArea {
+    border: 10px solid #286B9B;
+    background-color: #285172;
+    left: 305px;
+}
+
+#numpadArea {
+    border: 10px solid #4CAC29;
+    background-color: #427328;
+    left: 600px;
+}
+
+#genderSelect {
+    width: 700px;
+    height: 500px;
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+
+#maleMaster,
+#femaleMaster {
+    width: 25%;
+    height: 400px;
+    position: absolute;
+    top: 50px;
+}
+
+#maleMaster {
+    left: 50px
+}
+
+#femaleMaster {
+    right: 50px
+}
+
+#maleAvatar,
+#femaleAvatar {
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 5px;
+}
+
+#maleAvatar {
+    background-image: url(images/genderSelect/male.png);
+}
+
+#femaleAvatar {
+    background-image: url(images/genderSelect/female.png);
+}
+
+#maleButton,
+#femaleButton,
+#middleButton,
+#playAgainButton,
+#diffButton,
+#zoomButton{
+    width: 175px;
+    height: 95px;
+    background-color: #382858;
+    border: 5px solid #886060;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 32px;
+    cursor: pointer;
+    transition: 1s opacity;
+}
+
+#maleButton:active,
+#femaleButton:active,
+#middleButton:active,
+#playAgainButton:active
+#zoomButton:active{
+    background-color: #886060;
+    border: 5px solid #382858;
+}
+
+#middleButton{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -90px;
+}
+
+#diffButton {
+    position: absolute;
+    top: 71%;
+    left: 50%;
+    margin-left: -90px;
+}
+
+#title {
+    color: white;
+    text-align: center;
+}
+
+#title h1 {
+    font-size: 50px;
+}
+
+#enemyImage {
+    position: absolute;
+    top: 0px;
+    width: 200px;
+    height: 200px
+}
+
+#playerImage {
+    position: absolute;
+    bottom: 0px;
+    width: 200px;
+    height: 200px;
+    transition: 1s;
+}
+
+#playerHP,
+#computerHP {
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 2s;
+    transition-delay: 0.6s;
+    font-size: 35px;
+    text-transform: uppercase;
+
+}
+
+#playerHP {
+    background-image: url(images/misc/playerLife.png);
+    height: 120px;
+    width: 300px;
+    position: absolute;
+    bottom: 0;
+    right: -100%;
+}
+
+#computerHP {
+    background-image: url(images/misc/oppLife.png);
+    height: 80px;
+    width: 300px;
+    position: absolute;
+    top: 40px;
+    left: -100%;
+}
+
+#computerHPBar,
+#playerHPBar {
+    margin: 5px;
+    margin-bottom: 3px;
+    height: 3vh;
+    position: absolute;
+    bottom: 8px;
+    border-radius: 50px;
+    border: 2px solid black;
+    transition: 1s;
+}
+
+#playerHPBar {
+    left: 35px;
+    bottom: 50px;
+}
+
+.good {
+    width: 85%;
+    background-color: green;
+}
+
+.medium {
+    width: 50%;
+    background-color: yellow;
+}
+
+.bad {
+    width: 25%;
+    background-color: red;
+}
+
+.dead {
+    width: 0%;
+    background-color: red;
+    border: 1px solid black;
+}
+
+#mastery {
+    font-size: 20px;
+    position: absolute;
+    right: 25px;
+    top: 10px;
+}
+
+#playerTitle {
+    position: absolute;
+    left: 35px;
+    top: 5px;
+}
+
+#playerHealthCounter {
+    position: absolute;
+    top: 60px;
+    left: 120px;
+}
+
+#vs {
+    width: 40%;
+    margin: auto;
+    border: 5px solid white;
+    text-align: center;
+}
+
+#playerVS,
+#computerVS {
+    width: 48.5%;
+    margin: auto;
+}
+
+#computerVS {
+    border-left: 5px solid white;
+}
+
+#playerVS {
+    border-right: 5px solid white;
+}
+
+#subContainer {
+    position: absolute;
+    bottom: 10px;
+    left: -10px;
+    width: 100%;
+    border: 5px solid #286B9B
+}
+
+.submissionButton {
+    width: 50%;
+    height: 50px;
+    font-size: 30px;
+    border: 0px;
+}
+
+#submitButton {
+    background-color: #F85858;
+    color: #783030;
+}
+
+#submitButton:active {
+    background-color: #783030;
+    color: #F85858;
+}
+
+#clearButton {
+    background-color: #4898D8;
+    color: #305078;
+}
+
+#clearButton:active {
+    background-color: #305078;
+    color: #4898D8;
+}
+
+#answerDisplay,
+#questionDisplayArea {
+    text-align: center;
+    color: white;
+    font-size: 120px;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 20px;
+}
+
+.answerIs {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    margin-top: -25%;
+    margin-left: -25%;
+}
+
+#scoreIs {
+    font-size: 60px;
+    text-align: center;
+}
+
+#numpadArea table {
+    width: 100%;
+    height: 200px;
+}
+
+#numpadArea td {
+    width: 33%;
+}
+
+.numpadButton {
+    width: 100%;
+    height: 50px;
+    background-color: #4CAC29;
+    border: 0px;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.numpadButton:active {
+    background-color: aquamarine;
+    color: #4CAC29;
+}
+
+.numpadButtonSmall {
+    width: 50%;
+    height: 50px;
+    background-color: #4CAC29;
+    border: 0px;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.numpadButtonSmall:active {
+    background-color: aquamarine;
+    color: #4CAC29;
+}
+
+#actionArea {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: 10px;
+    background-color: #C68429;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+
+#endScreen {
+    color: white;
+    text-align: center;
+    margin-top: -45px;
+}
+
+#congrats {
+    font-size: 50px;
+}
+
+#winSubtitle {
+    font-size: 30px;
+}
+
+#winnerImage {
+    width: 15%;
+    display: block;
+    margin: auto;
+}
+
+#endScreen table {
+    width: 20%;
+    position: absolute;
+    left: 41%;
+    margin-top: -15px;
+}
+
+#endScreen tr {
+    height: 10px;
+}

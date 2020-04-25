@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height initial-scale=1.0">
+    <title>MATH MASTERS</title>
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/50/e1/db/50e1db4684e6f697f93590950eb832f6.png" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body unselectable="on">
+    <div id="zoomTest"><div id="zoomContent"><h1>Adjust Page Zoom Until Border Fits On Page</h1><button id="zoomButton" onclick="document.getElementById('zoomTest').style.opacity = 0;
+    setTimeout(function () {
+            document.getElementById('zoomTest').style.display = 'none';
+        }, 500)">Let's go!</button></div></div>
+    <div id="transition"></div>
+    <div id='gameArea' class="gameElement" onload="restart()">
+        <div id="genderSelect">
+            <div id="title">
+                <h1>Maths Masters</h1>
+                <h3>Kevin M. Smith</h3>
+                <h4>R00171883</h4>
+                <h2>CHOOSE:</h2>
+            </div>
+            <div id="maleMaster">
+                <div id="maleAvatar"></div>
+                <button id="maleButton" onclick="genderSelect('male')">MALE</button>
+            </div>
+            <button disabled id="middleButton" onclick="levelLoad()">START GAME</button>
+            <button id="diffButton" onclick="buttonSwitch()">Hard Mode: <span id="hardModeOnOff">OFF</span></button>
+            <div id="femaleMaster">
+                <div id="femaleAvatar"></div>
+                <button id="femaleButton" onclick="genderSelect('female')">FEMALE</button>
+            </div>
+        </div>
+    </div>
+</body></html>
